@@ -17,10 +17,6 @@ public class Matrix {
 
     /**
      * Set the weight between the neighbors [Cities]
-     *
-     * @param i      point and point j that create an edge [path]
-     * @param j      point and point i that create an edge [path]
-     * @param weight of the edges - non-negative number
      */
     public void setEdge(int i, int j, int weight) {
         cost[i][j] = weight;
@@ -28,10 +24,6 @@ public class Matrix {
 
     /**
      * Freight cost
-     *
-     * @param i point and point j that create an edge [path]
-     * @param j point and point i that create an edge [path]
-     * @return 0 if i and j are the same, infinity, if there is no connection between the edges of the edges
      */
     private int getCost(int i, int j) {
         if (i == j) {
@@ -45,11 +37,7 @@ public class Matrix {
 
     /**
      * Select the closest untagged vertex
-     *
-     * @param result  Назначить 1-ю верхнюю метку, равную «источнику», поскольку эта вершина
-     * @param visited an array of visited cities
-     * @return the index of the smallest element of distances, ignoring those in visited.
-     */
+    */
     private int getUntaggedVertex(Integer[] result, boolean[] visited) {
         int best = -1;
         for (int i = 0; i < cost.length; i++) { // Sort out the vertices
@@ -62,9 +50,6 @@ public class Matrix {
 
     /**
      * Returns The ways of minimum cost between pairs of cities
-     *
-     * @param startIndex Initial vertex
-     * @return an array of distances between cities
      */
     public Integer[] waysOfMinimumCostBetweenPairsOfCities(int startIndex) {
         boolean[] visited = new boolean[cost.length];// visit the city
